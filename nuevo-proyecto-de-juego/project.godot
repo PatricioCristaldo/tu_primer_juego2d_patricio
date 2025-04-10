@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="tu primer juego 2d"
+run/main_scene="uid://2y11w8xav8c0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
