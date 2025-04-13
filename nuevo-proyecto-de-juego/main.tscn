@@ -1,22 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://2y11w8xav8c0"]
+[gd_scene load_steps=7 format=3 uid="uid://2y11w8xav8c0"]
 
 [ext_resource type="Script" uid="uid://c66cyy6f0j26v" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dak3pu31mr0m5" path="res://mob.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://ma1pqtcxaex8" path="res://player.tscn" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://c7axalmcllh8e" path="res://-1472580979.jpg" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bmxs0odcfb2gj" path="res://hud.tscn" id="4_1bvp3"]
 
 [sub_resource type="Curve2D" id="Curve2D_1bvp3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4, 4, 0, 0, 0, 0, 471, -2, 0, 0, 0, 0, 478, 719, 0, 0, 0, 0, -4, 4)
+"points": PackedVector2Array(0, 0, 0, 0, -4, 4, 0, 0, 0, 0, 471, -2, 0, 0, 0, 0, 478, 719, 0, 0, 0, 0, 0, 706, 0, 0, 0, 0, -4, 4)
 }
-point_count = 4
+point_count = 5
 
 [node name="Main" type="Node2D"]
+position = Vector2(0, 16)
 script = ExtResource("1_0xm2m")
 mob_scene = ExtResource("2_1bvp3")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 720.0
+offset_bottom = 720.0
+texture = ExtResource("3_lquwl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
-position = Vector2(128, 96)
+position = Vector2(-138, -46)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -28,15 +44,15 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(-6, 178)
 
 [node name="MobPath" type="Path2D" parent="."]
-position = Vector2(3.9668, 0)
+position = Vector2(-152, -64)
 scale = Vector2(0.991701, 1)
 curve = SubResource("Curve2D_1bvp3")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2(-3.99997, 0)
+position = Vector2(290.41, 2)
 rotation = -0.0126309
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]

@@ -14,7 +14,7 @@ func new_game():
 	$HUD.show_message("Get Ready")
 	get_node("Player").show()
 	get_tree().paused = false
-	get_node("Player").position = Vector2(400, 300)  # Ajusta esta posición según sea necesario
+	get_node("Player").position = Vector2(200, 300)  # Ajusta esta posición según sea necesario
 
 func _on_score_timer_timeout():
 	score += 1
